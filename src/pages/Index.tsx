@@ -182,29 +182,29 @@ export default function Index() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#1275d8"
-            colorB="#e19136"
-            speed={0.8}
-            detail={0.8}
-            blend={50}
-            coarseX={40}
-            coarseY={40}
-            mediumX={40}
-            mediumY={40}
-            fineX={40}
-            fineY={40}
+            colorA="#4a1a8a"
+            colorB="#1a4a6a"
+            speed={0.3}
+            detail={0.6}
+            blend={60}
+            coarseX={30}
+            coarseY={30}
+            mediumX={30}
+            mediumY={30}
+            fineX={20}
+            fineY={20}
           />
           <ChromaFlow
-            baseColor="#0066ff"
-            upColor="#0066ff"
-            downColor="#d1d1d1"
-            leftColor="#e19136"
-            rightColor="#e19136"
-            intensity={0.9}
-            radius={1.8}
-            momentum={25}
+            baseColor="#2d1b69"
+            upColor="#3d2b79"
+            downColor="#0d0d2b"
+            leftColor="#1a3a5a"
+            rightColor="#2a1a5a"
+            intensity={0.85}
+            radius={2.0}
+            momentum={40}
             maskType="alpha"
-            opacity={0.97}
+            opacity={0.95}
           />
         </Shader>
         <div className="absolute inset-0 bg-black/20" />
@@ -220,13 +220,13 @@ export default function Index() {
           className="flex items-center gap-2 transition-transform hover:scale-105"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-            <span className="font-sans text-xl font-bold text-foreground">F</span>
+            <span className="font-sans text-xl font-bold text-foreground">Z</span>
           </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Flowrise</span>
+          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Zenflow</span>
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Работы", "Услуги", "О нас", "Контакты"].map((item, index) => (
+          {["Главная", "Медитации", "Как работает", "О нас", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -244,8 +244,8 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Начать
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(1)}>
+          Слушать
         </MagneticButton>
       </nav>
 

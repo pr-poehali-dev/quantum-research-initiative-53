@@ -15,31 +15,31 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Как работает
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Просто и без лишних усилий</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Выбери состояние",
+              description: "Стресс, усталость, бессонница или желание сосредоточиться — найди медитацию под своё настроение прямо сейчас",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Нажми «Слушать»",
+              description: "Голосовая медитация начнётся сразу. Никаких регистраций и сложных настроек — просто закрой глаза и дыши",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "От 5 минут в день",
+              description: "Даже короткая практика меняет качество дня. Начни с 5 минут утром — и почувствуй разницу уже сегодня",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Прогресс каждый день",
+              description: "Отслеживай свои практики, стройте привычку и открывай новые медитации по мере роста",
               direction: "bottom",
             },
           ].map((service, i) => (
