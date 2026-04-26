@@ -7,43 +7,55 @@ const meditations = [
   {
     number: "01",
     title: "Утреннее пробуждение",
-    category: "Энергия · 7 минут",
+    category: "Энергия · 10 минут",
     year: "Утро",
     direction: "left",
+    audioUrl: "https://ia601905.us.archive.org/30/items/jamendo-559810/01-2153953-Crystal%20Wave-Binaural%20Meditation.mp3",
+    duration: 593,
   },
   {
     number: "02",
     title: "Снятие тревоги",
-    category: "Стресс · 10 минут",
+    category: "Стресс · 23 минуты",
     year: "День",
     direction: "right",
+    audioUrl: "https://ia600107.us.archive.org/12/items/ipc-calming-overthinking-396hz-theta-8d/23%20Min%20Calm%20Overthink%208d_mix.mp3",
+    duration: 1405,
   },
   {
     number: "03",
     title: "Глубокий сон",
-    category: "Сон · 15 минут",
+    category: "Сон · 60 минут",
     year: "Ночь",
     direction: "left",
+    audioUrl: "https://ia600803.us.archive.org/21/items/meditation-gamma-binaural-waves-for-transcendental-focus-2/Meditation%20gamma%20binaural%20waves%20for%20transcendental%20focus%20%282%29.mp3",
+    duration: 3600,
   },
   {
     number: "04",
     title: "Фокус и ясность",
-    category: "Концентрация · 5 минут",
+    category: "Концентрация · Бинауральные ритмы",
     year: "День",
     direction: "right",
+    audioUrl: "https://ia601905.us.archive.org/30/items/jamendo-559810/01-2153953-Crystal%20Wave-Binaural%20Meditation.mp3",
+    duration: 593,
   },
   {
     number: "05",
     title: "Перезагрузка после работы",
-    category: "Усталость · 12 минут",
+    category: "Усталость · 23 минуты",
     year: "Вечер",
     direction: "left",
+    audioUrl: "https://ia600107.us.archive.org/12/items/ipc-calming-overthinking-396hz-theta-8d/23%20Min%20Calm%20Overthink%208d_mix.mp3",
+    duration: 1405,
   },
 ]
 
+type Meditation = typeof meditations[0]
+
 export function WorkSection() {
   const { ref, isVisible } = useReveal(0.3)
-  const [activeMeditation, setActiveMeditation] = useState<{ title: string; category: string } | null>(null)
+  const [activeMeditation, setActiveMeditation] = useState<Meditation | null>(null)
 
   return (
     <>
@@ -71,7 +83,7 @@ export function WorkSection() {
                 index={i}
                 isVisible={isVisible}
                 isActive={activeMeditation?.title === item.title}
-                onPlay={() => setActiveMeditation({ title: item.title, category: item.category })}
+                onPlay={() => setActiveMeditation(item)}
               />
             ))}
           </div>
@@ -82,6 +94,8 @@ export function WorkSection() {
         <AudioPlayer
           title={activeMeditation.title}
           category={activeMeditation.category}
+          audioUrl={activeMeditation.audioUrl}
+          duration={activeMeditation.duration}
           onClose={() => setActiveMeditation(null)}
         />
       )}
@@ -96,7 +110,7 @@ function MeditationCard({
   isActive,
   onPlay,
 }: {
-  item: { number: string; title: string; category: string; year: string; direction: string }
+  item: Meditation
   index: number
   isVisible: boolean
   isActive: boolean

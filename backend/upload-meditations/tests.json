@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Upload meditations to S3",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": { "success": true },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
